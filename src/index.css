@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.text-primary { color: theme('colors.primary.DEFAULT'); }
+	.bg-primary { background-color: theme('colors.primary.DEFAULT'); }
+	.bg-primary-700 { background-color: theme('colors.primary.700'); }
+	.text-secondary { color: theme('colors.secondary'); }
+	.bg-secondary { background-color: theme('colors.secondary'); }
+	.bg-background { background-color: theme('colors.background'); }
+	.bg-accent { background-color: theme('colors.accent'); }
+	.text-accent { color: theme('colors.accent'); }
+}
+
+@layer base {
+	html, body, #root {
+		height: 100%;
+	}
+
+	body {
+		@apply bg-background text-gray-900 font-sans;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	a {
+		@apply text-primary hover:underline;
+	}
+}
+
+@layer components {
+	.container-centered {
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+@layer utilities {
+	.text-primary { color: theme('colors.primary.DEFAULT'); }
+	.bg-primary { background-color: theme('colors.primary.DEFAULT'); }
+	.bg-primary-700 { background-color: theme('colors.primary.700'); }
+}
