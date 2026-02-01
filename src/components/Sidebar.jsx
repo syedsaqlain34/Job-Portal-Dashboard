@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ className = "" }) => {
+  const base = "hidden md:block w-64 bg-accent text-primary p-5 shadow-sm mt-4 rounded-lg border border-primary/80 sticky top-24";
   return (
-    <aside className="hidden md:block w-64 bg-primary text-accent min-h-screen p-6">
-      <h2 className="text-xl font-semibold mb-6">Dashboard</h2>
-      <nav className="flex flex-col gap-3">
-        <Link to="/" className="py-2 px-3 rounded-md text-accent hover:bg-primary/90">Home</Link>
-        <Link to="/jobs" className="py-2 px-3 rounded-md text-accent hover:bg-primary/90">Jobs</Link>
-        <Link to="/profile" className="py-2 px-3 rounded-md text-accent hover:bg-primary/90">Profile</Link>
+    <aside className={`${base} ${className}`.trim()}>
+      <div className="flex items-center justify-between mb-6 px-1">
+        <h2 className="text-xl font-semibold">Dashboard</h2>
+      </div>
+      <nav className="flex flex-col gap-2 px-1">
+        <Link to="/" className="py-3 px-3 rounded-md text-primary hover:bg-background">Home</Link>
+        <Link to="/jobs" className="py-3 px-3 rounded-md text-primary hover:bg-background">Jobs</Link>
+        <Link to="/profile" className="py-3 px-3 rounded-md text-primary hover:bg-background">Profile</Link>
       </nav>
     </aside>
   );

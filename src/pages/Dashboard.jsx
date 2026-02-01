@@ -38,12 +38,13 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar />
-      <div className="flex-1">
-        <Navbar />
+    <div className="min-h-screen bg-background">
+      <Navbar />
 
-        <main className="p-6 container-centered">
+      <div className="flex mt-4">
+        <Sidebar className="ml-4" />
+
+        <main className="flex-1 p-6 container-centered">
           <section className="mb-6">
             <div className="bg-gradient-to-r from-primary to-secondary text-accent rounded-lg p-6 flex items-center justify-between gap-6">
               <div>
@@ -76,7 +77,7 @@ const Dashboard = () => {
           <section>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold">Recommended Jobs</h2>
-              <a href="/jobs" className="text-indigo-600">See all</a>
+              <a href="/jobs" className="text-secondary">See all</a>
             </div>
 
             {loading ? (

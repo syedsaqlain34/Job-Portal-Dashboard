@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const defaultProfile = {
   name: "Your Name",
@@ -29,6 +30,14 @@ const Profile = () => {
 
   return (
     <div className="p-6 container-centered">
+      <div className="mb-4 flex items-center justify-between">
+        <Link to="/" className="inline-flex items-center gap-2 text-sm text-primary hover:underline">
+          <span className="text-lg">←</span>
+          <span>Home</span>
+        </Link>
+        <div className="hidden sm:block text-sm text-gray-600">Profile / Account</div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <aside data-aos="fade-right" data-aos-duration="700" className="md:col-span-1 bg-accent border rounded-lg p-0 shadow-sm overflow-hidden">
           <div className="bg-primary text-accent p-4 text-center">
@@ -56,7 +65,7 @@ const Profile = () => {
           </div>
         </aside>
 
-        <section data-aos="fade-left" data-aos-duration="700" className="md:col-span-2 bg-accent border rounded-lg p-4 shadow-sm">
+        <section data-aos="fade-left" data-aos-duration="700" className="md:col-span-2 bg-accent border rounded-lg p-4 shadow-sm  ">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-primary">Profile</h3>
             <button onClick={() => setEditing(!editing)} className="px-3 py-2 bg-secondary text-primary rounded-md">{editing ? 'Cancel' : 'Edit'}</button>
