@@ -1,3 +1,3 @@
-## Job Portal Dashboard .
+## Job Portal Dashboard 
 
 ### React + vite Project 
